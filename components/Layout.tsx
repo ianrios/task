@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import Head from 'next/head'
 import Header from './Header'
 
 type Props = {
@@ -7,6 +8,11 @@ type Props = {
 
 const Layout: React.FC<Props> = (props) => (
   <div>
+    <Head>
+      <title>task</title>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
     <Header />
     <div className="layout">{props.children}</div>
     <style jsx global>{`
