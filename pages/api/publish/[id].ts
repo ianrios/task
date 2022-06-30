@@ -4,10 +4,7 @@ import prisma from 'lib/prisma'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 // PUT /api/publish/:id
-export default async function handle(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+const handle = async (req: NextApiRequest, res: NextApiResponse) => {
   const postId = req.query.id
   if (typeof postId === 'string') {
     const post = await prisma.post.update({
@@ -17,3 +14,4 @@ export default async function handle(
     res.json(post)
   }
 }
+export default handle
